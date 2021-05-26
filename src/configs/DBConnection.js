@@ -7,14 +7,11 @@ let connection = mysql.createConnection({
     password: 'pocvb9zaolz42knu',
     database: 'classi',
     port: 25060,
-    dialectOptions: {
-        ssl: {
-            ssl: true,
-        }
-    }
+    ssl: true,
 });
 
 connection.connect(function(err) {
+    console.log(err);
     if (err) throw err;
     console.log("Database connected!");
 });
