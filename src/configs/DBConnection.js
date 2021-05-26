@@ -2,10 +2,16 @@ require('dotenv').config();
 import mysql from "mysql2";
 
 let connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    host: 'app-709a4f14-3b21-4aee-889c-a3984e00b711-do-user-9291773-0.b.db.ondigitalocean.com',
+    user: 'classi',
+    password: 'pocvb9zaolz42knu',
+    database: 'classi',
+    port: 25060,
+    dialectOptions: {
+        ssl: {
+            ssl: true,
+        }
+    }
 });
 
 connection.connect(function(err) {
@@ -14,3 +20,4 @@ connection.connect(function(err) {
 });
 
 module.exports = connection;
+
