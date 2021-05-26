@@ -171,10 +171,17 @@ app.use(errHandler);
 // init all web routes
 initWebRoutes(app);
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => console.log('server started on port', port))
+// const { PORT=5000, LOCAL_ADDRESS='0.0.0.0' } = process.env
+// server.listen(PORT, LOCAL_ADDRESS, () => {
+//   const address = server.address();
+//   console.log('server listening at', address);
+// });
+
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log('server started on port', PORT))
 // app.listen(process.env.PORT || 5000, function(){
-//     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+//     console.log("Express server listening on port %d in %s mode", this.address().PORT, app.settings.env);
 //   });
 
 // const PORT = process.env.PORT || 80;
