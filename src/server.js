@@ -156,7 +156,6 @@ app.use(errHandler);
 // init all web routes
 initWebRoutes(app);
 
-const port = process.env.port || '5000';
-app = express();
+const port = process.env.PORT || '5000';
 
-app.listen(process.env.port || '5000', () => console.log(`Building a login system with NodeJS is running on port ${port}!`));
+app.listen(port, () => console.log(`Building a login system with NodeJS is running on port ${port}!`));
