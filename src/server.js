@@ -11,7 +11,23 @@ import dbCon from "./configs/DBConnection";
 const cors = require('cors');
 const path = require('path');
 
-let app = express();
+var express = require('express')
+var app = express()
+
+app.set('port', (process.env.PORT || 5000))
+app.use(express.static(__dirname + '/public'))
+
+app.get('/', function(request, response) {
+  response.send('Hello World!')
+})
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
+
+
+
+// let app = express();
 
 //cors
 var corsOptions = {
@@ -156,9 +172,9 @@ app.use(errHandler);
 // init all web routes
 initWebRoutes(app);
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-  });
+// app.listen(process.env.PORT || 3000, function(){
+//     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+//   });
 
 // const PORT = process.env.PORT || 80;
 // var server = app.listen(PORT, function() {
