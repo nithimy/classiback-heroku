@@ -156,6 +156,15 @@ app.use(errHandler);
 // init all web routes
 initWebRoutes(app);
 
-const port = process.env.PORT || '5000';
+const PORT = process.env.PORT || 80;
+var server = app.listen(PORT, function() {
+    var host = server.address().address;
+    var port = server.address().port;
+    console.log("server is listening at http://%s:%s", host, port);
+});
+// const port = process.env.PORT || '5000';
 
-app.listen(port, () => console.log(`Building a login system with NodeJS is running on port ${port}!`));
+// http.listen((process.env.PORT || 5000), function(){
+//     console.log('listening on *:5000');
+//   });
+// app.listen(port, () => console.log(`Building a login system with NodeJS is running on port ${port}!`));
