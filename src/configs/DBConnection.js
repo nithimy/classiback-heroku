@@ -13,9 +13,9 @@ const path = require('path')
 // });
 const MYSQL_CONF = {
     username: 'b09204a1f66b9f',
-    password: 'pocvb9zaolz42knu',
+    password: '06e3b8b',
     database: 'class',
-    host: 'db-mysql-v1-29254-do-user-7904424-0.a.db.ondigitalocean.com',
+    host: 'dus-cdbr-east-03.cleardb.com',
     port: 25060,
     dialect: 'mysql',
     connectTimeout: 60000,
