@@ -17,9 +17,7 @@ var connection = mysql.createConnection({
     database: "classi",
     multipleStatements:true,
     port: 25060,
-    queryTimeout: 6000,
     connectTimeout: 60000,
-    ssl: true,
     });
     
     con.connect(function (err){
