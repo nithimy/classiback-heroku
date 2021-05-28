@@ -177,6 +177,8 @@ initWebRoutes(app);
 //   console.log('server listening at', address);
 // });
 
+var env = process.env.NODE_ENV || 'development';
+var config = require('./src/configs/DBConnection.js')[env];
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server started on running on port ${port}!`)).keepAliveTimeout = 61 * 1000;
